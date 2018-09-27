@@ -25,12 +25,13 @@
 	<?php 
 		while ($row = mysqli_fetch_array($pizzaDetail, MYSQLI_ASSOC)) { /* Display pictures, name of pictures was retrieved from database */
 	?>
-	<img src=<?php echo $row["Picture"] ?>>                     
-
-	</form>
+	<img src=<?php echo $row["Picture"] ?> vaule=<?php echo $row["PizzaID"] ?>>                     
 
 	<?php
 		}
 	?>
+	</form>
+
+
 </body>
 </html>
