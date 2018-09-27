@@ -1,0 +1,12 @@
+body {
+    background-size: 1920px 1080px;
+}
+
+h1 {
+	text-align: center;
+}
+
+img {
+	margin: auto;
+	display: block;
+}
