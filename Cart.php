@@ -18,8 +18,20 @@
 	if (!isset($_SESSION['pizzaSession'])) {
 		$_SESSION['pizzaSession']=array();
 	}
-	array_push($_SESSION['pizzaSession'], $_SESSION['pizzaSe']);
+	array_push($_SESSION['pizzaSession'], $_SESSION['pizzaSe']);      /* collection of pizza pictures */
 
+	if (!isset($_SESSION['pizzaNum'])) {
+		$_SESSION['pizzaNum']=array();                             /* collection of amount of pizzas */
+	}
+	array_push($_SESSION['pizzaNum'], $pizza);
+
+
+	if (!isset($_SESSION['sauce'])) {
+		$_SESSION['sauce']=array();                             /* collection of sauces */
+	}
+	array_push($_SESSION['sauce'], $sauce);
+
+	$cou=0;              /* counting pizza number */
 	?>
 
 
@@ -34,17 +46,32 @@
 
 			<?php 
 			foreach ($_SESSION['pizzaSession'] as $key => $value) {
+			
 			?>
-			<img src=<?php echo $value ?>>
+			<img src=<?php echo $value ?>> 
+			<?php
+			echo "<span>Number of Pizzas:</span>";
+			echo $_SESSION['pizzaNum'][$cou];
+			$cou++;
+			?>
+			<br>
 			<?php
 				}
 			?>
 			 
-			<p style="display: inline;">Number of pizzas: <?php echo $pizza ?></p>
+
 		</div>
 		<div style="display: inline-block;">
 			<p>You selected sauce:</p>
-			<img src=<?php echo $_POST["sauce"] ?>>
+			<?php
+			foreach ($_SESSION['sauce'] as $key => $value) {
+			?>
+			
+			<img src=<?php echo $value ?>>
+			<br>
+			<?php
+			}
+			?>
 		</div>
 	</div>
 	<br>
@@ -54,7 +81,7 @@
 
 
 	<br>	
-	<div>
+	<div style="float: left;">
 	<a href="order.php" >Order another pizza</a>
 	</div>
 	<a href="test.php">test</a>
