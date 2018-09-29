@@ -85,5 +85,6 @@
 	<a href="order.php" >Order another pizza</a>
 	</div>
 	<a href="test.php">test</a>
+	<a href="checkout.php">Check Out</a>
 </body>
 </html>
