@@ -10,10 +10,36 @@
 		$sauce=$_POST["sauce"];          /* sauce ID */
 	?>
 	<h1>You have selected the following items:</h1>
+
+
+
+
+	<?php 
+	if (!isset($_SESSION['pizzaSession'])) {
+		$_SESSION['pizzaSession']=array();
+	}
+	array_push($_SESSION['pizzaSession'], $_SESSION['pizzaSe']);
+
+	?>
+
+
+
+
+
+
 	<div style="display: inline;">
 		<div style="display: inline-block; float: left; width: 50%;">
 			<p>You selected pizzas:</p>
-			<img src=<?php echo $_SESSION['pizzaSe'] ?>>
+			
+
+			<?php 
+			foreach ($_SESSION['pizzaSession'] as $key => $value) {
+			?>
+			<img src=<?php echo $value ?>>
+			<?php
+				}
+			?>
+			 
 			<p style="display: inline;">Number of pizzas: <?php echo $pizza ?></p>
 		</div>
 		<div style="display: inline-block;">
