@@ -14,7 +14,7 @@
 
 
 
-	<?php 
+	<?php
 	if (!isset($_SESSION['pizzaSession'])) {
 		$_SESSION['pizzaSession']=array();
 	}
@@ -42,13 +42,13 @@
 	<div style="display: inline;">
 		<div style="display: inline-block; float: left; width: 50%;">
 			<p>You selected pizzas:</p>
-			
 
-			<?php 
+
+			<?php
 			foreach ($_SESSION['pizzaSession'] as $key => $value) {
-			
+
 			?>
-			<img src=<?php echo $value ?>> 
+			<img src=<?php echo $value ?>>
 			<?php
 			echo "<span>Number of Pizzas:</span>";
 			echo $_SESSION['pizzaNum'][$cou];
@@ -58,7 +58,7 @@
 			<?php
 				}
 			?>
-			 
+
 
 		</div>
 		<div style="display: inline-block;">
@@ -66,7 +66,7 @@
 			<?php
 			foreach ($_SESSION['sauce'] as $key => $value) {
 			?>
-			
+
 			<img src=<?php echo $value ?>>
 			<br>
 			<?php
@@ -80,7 +80,7 @@
 	<br>
 
 
-	<br>	
+	<br>
 	<div style="float: left;">
 	<a href="order.php" >Order another pizza</a>
 	</div>
@@ -88,3 +88,4 @@
 	<a href="checkout.php">Check Out</a>
 </body>
 </html>
+1111
