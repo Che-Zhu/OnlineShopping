@@ -1,6 +1,6 @@
 <?php
 	session_start();
-
+	$totalPizza = 0;
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +29,23 @@
 			echo "<span>The size of the pizza is: </span>";
 			echo $row["Size"];
 			echo "<span>The price of the pizza is: </span>";
-			echo $row ["Price"];
-
+			echo $row["Price"];
+			echo "<span>The number of this pizza ordered is: </span>";
+			echo $_SESSION['pizzaNum'][$i];
+			$totalPizza = $totalPizza + ($_SESSION['pizzaNum'][$i] * $row["Price"]);
 
 
 			echo "<img src=".$_SESSION['sauce'][$i].">";
 
 			echo "<br>";
 		}
+
+		echo "The total price is: " ,$totalPizza;
+		$_SESSION['totalPrice'] = $totalPizza;
 		?>
+
+
+
 
 
 
@@ -71,7 +79,9 @@
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
   			$firstName = $_POST["FirstName"];
+  			$_SESSION['firstName'] = $firstName;
 			$lastName = $_POST["LastName"];
+			$_SESSION['lastName'] = $lastName;
 		
 			$checkFirst = "SELECT GivenName FROM customer WHERE GivenName = '$firstName'";
 			$checkLast = "SELECT GivenName FROM customer WHERE LastName = '$lastName'";
@@ -82,9 +92,16 @@
 			if ($firstName == NULL || $firstff == NULL || $lastName == NULL || $lastff == NULL) {
 				echo '<p>The information you provided does not match with our database!</p>';
 				return false;
+			} else {
+				header("Location: confirm.php");
+
 			}
+			
 		}
 
+
+
+		
 
 ?>
 
