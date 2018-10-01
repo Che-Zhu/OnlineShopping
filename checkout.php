@@ -9,7 +9,7 @@
 	<title>CheckOut</title>
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
-<body background="background.jpg">
+<body background="background1.jpg">
 		<?php
 		$conn = mysqli_connect('localhost','root', '', 'pizzastore');
 		if ( !$conn ) {
