@@ -5,7 +5,7 @@
 	<title>Shopping Cart</title>
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
-<body background="background.jpg">
+<body background="background1.jpg">
 	<?php
 		$pizza=$_POST["valuePizza"];     /* number of pizza */
 		$sauce=$_POST["sauce"];          /* sauce ID */
@@ -51,8 +51,8 @@
 			?>
 			<img src=<?php echo $value ?>>
 			<?php
-			echo '<span style="float: center;">Number of Pizzas:</span>';
-			echo $_SESSION['pizzaNum'][$cou];
+			echo '<div style="text-align: center;">','<span >Number of Pizzas:</span>', $_SESSION['pizzaNum'][$cou], '</div>';
+
 			$cou++;
 			?>
 			<br>

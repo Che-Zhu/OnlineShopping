@@ -20,19 +20,15 @@
 
 
 		for ($i=0; $i < count($_SESSION['pizzaSession']); $i++) {
-			echo "<img src=".$_SESSION['pizzaSession'][$i].">";
+
 
 			$sizeTemp = $_SESSION['pizzaSession'][$i];
 
 			$sqlSize = "SELECT Size, Price FROM pizza WHERE Picture = '$sizeTemp'";
 			$size = mysqli_query($conn, $sqlSize);
 			$row = mysqli_fetch_array($size, MYSQLI_ASSOC);
-			echo '<span style="float: center;">The size of the pizza is: </span>';
-			echo $row["Size"];
-			echo "<span>The price of the pizza is: </span>";
-			echo $row["Price"];
-			echo "<span>The number of this pizza ordered is: </span>";
-			echo $_SESSION['pizzaNum'][$i];
+			echo '<div style: "text-align: center;">', "<img src=".$_SESSION['pizzaSession'][$i].">", '<br>', '<span>The size of the pizza is: </span>', $row["Size"], '<br>', "<span>The price of the pizza is: </span>"
+			, $row["Price"], '<br>', "<span>The number of this pizza ordered is: </span>", $_SESSION['pizzaNum'][$i], '</div>';
 			$totalPizza = $totalPizza + ($_SESSION['pizzaNum'][$i] * $row["Price"]);
 
 
