@@ -10,4 +10,6 @@ h1 {
 img {
 	margin: auto;
 	display: block;
+  height: 100px;
+  width: 200px;
 }
