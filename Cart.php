@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Shopping Cart</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body background="background.jpg">
 	<?php
@@ -14,7 +15,7 @@
 
 
 
-	<?php 
+	<?php
 	if (!isset($_SESSION['pizzaSession'])) {
 		$_SESSION['pizzaSession']=array();
 	}
@@ -41,16 +42,16 @@
 
 	<div style="display: inline;">
 		<div style="display: inline-block; float: left; width: 50%;">
-			<p>You selected pizzas:</p>
-			
+			<p style="text-align: center;">You selected pizzas:</p>
 
-			<?php 
-			foreach ($_SESSION['pizzaSession'] as $key => $value) {
-			
-			?>
-			<img src=<?php echo $value ?>> 
+
 			<?php
-			echo "<span>Number of Pizzas:</span>";
+			foreach ($_SESSION['pizzaSession'] as $key => $value) {
+
+			?>
+			<img src=<?php echo $value ?>>
+			<?php
+			echo '<span style="float: center;">Number of Pizzas:</span>';
 			echo $_SESSION['pizzaNum'][$cou];
 			$cou++;
 			?>
@@ -58,7 +59,7 @@
 			<?php
 				}
 			?>
-			 
+
 
 		</div>
 		<div style="display: inline-block;">
@@ -66,7 +67,7 @@
 			<?php
 			foreach ($_SESSION['sauce'] as $key => $value) {
 			?>
-			
+
 			<img src=<?php echo $value ?>>
 			<br>
 			<?php
@@ -80,11 +81,11 @@
 	<br>
 
 
-	<br>	
+	<br>
 	<div style="float: left;">
-	<a href="order.php" >Order another pizza</a>
+	<a href="order.php" style="float: left;">Order another pizza</a>
 	</div>
-	<a href="test.php">test</a>
-	<a href="checkout.php">Check Out</a>
+
+	<a href="checkout.php" style="float: right;">Check Out</a>
 </body>
 </html>
